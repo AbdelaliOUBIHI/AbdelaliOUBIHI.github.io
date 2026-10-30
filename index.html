@@ -1,73 +1,430 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdelali Oubihi | Supply Chain & Data Analytics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdelali Oubihi | Supply Chain & Analytics</title>
+<meta name="description" content="Professional portfolio of Abdelali Oubihi, Supply Chain Coordinator focused on supply chain performance and data analytics.">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            color: #222;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #172b4d;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        header h1 {
-            font-size: 36px;
-        }
-
-        section {
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-        }
-
-        h2 {
-            color: #172b4d;
-        }
-    </style>
+<style>
+:root {
+  --navy: #10243e;
+  --blue: #2563eb;
+  --cyan: #19b6c9;
+  --text: #263449;
+  --muted: #64748b;
+  --light: #f4f7fb;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.7;
+}
+a { text-decoration: none; color: inherit; }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #e5eaf1;
+}
+.logo { font-weight: 800; color: var(--navy); font-size: 20px; }
+.nav-links { display: flex; gap: 23px; flex-wrap: wrap; }
+.nav-links a { font-size: 13px; color: var(--muted); font-weight: 600; }
+.nav-links a:hover { color: var(--blue); }
+.hero {
+  padding: 105px 8% 90px;
+  color: white;
+  background: linear-gradient(120deg, #10243e, #173f68 70%, #146b85);
+}
+.hero-content { max-width: 950px; margin: auto; }
+.eyebrow {
+  color: #72e0e4;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.hero h1 {
+  font-size: clamp(40px, 7vw, 70px);
+  line-height: 1.12;
+  margin: 20px 0;
+}
+.hero h1 span { color: #70dce5; }
+.hero p { max-width: 680px; color: #d6e4f2; font-size: 18px; }
+.actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.btn-primary { background: #28b9c8; color: #09243c; }
+.btn-outline { border: 1px solid #b8cde0; color: white; }
+section { padding: 75px 8%; }
+.container { max-width: 1100px; margin: auto; }
+.section-label {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.section-title {
+  color: var(--navy);
+  font-size: clamp(27px, 4vw, 38px);
+  margin: 8px 0 15px;
+}
+.section-intro { color: var(--muted); max-width: 720px; margin-bottom: 30px; }
+.about-grid, .two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+.card {
+  background: white;
+  border: 1px solid #e5eaf1;
+  border-radius: 13px;
+  padding: 25px;
+  box-shadow: 0 8px 28px rgba(16,36,62,.04);
+}
+.card h3 { color: var(--navy); margin-bottom: 10px; }
+.card p { color: var(--muted); font-size: 14px; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.skill-card {
+  background: white;
+  border: 1px solid #e5eaf1;
+  padding: 23px;
+  border-radius: 12px;
+  transition: .2s;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #8bb8f5;
+}
+.skill-card h3 { color: var(--navy); margin-bottom: 9px; font-size: 17px; }
+.skill-card p { color: var(--muted); font-size: 13px; }
+.process {
+  background: var(--navy);
+  color: white;
+}
+.process .section-title { color: white; }
+.process .section-intro { color: #c4d4e4; }
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 35px;
+}
+.flow-item {
+  padding: 22px 12px;
+  text-align: center;
+  border: 1px solid #45617e;
+  border-radius: 12px;
+  background: #193653;
+}
+.flow-item strong { display: block; color: #79e0e4; margin-bottom: 5px; }
+.flow-item span { font-size: 13px; color: #d2dfec; }
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.tool {
+  background: #eaf1ff;
+  color: #1e4f9a;
+  border: 1px solid #d8e5ff;
+  padding: 9px 15px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.timeline { border-left: 2px solid #c8d8ed; padding-left: 23px; }
+.timeline-item { margin-bottom: 25px; position: relative; }
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.timeline-item h3 { color: var(--navy); font-size: 17px; }
+.timeline-item p { color: var(--muted); font-size: 14px; }
+.project-note {
+  border: 1px dashed #a9bdd5;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  color: var(--muted);
+}
+.contact {
+  background: #eaf1f8;
+  text-align: center;
+}
+.contact .section-intro { margin-left: auto; margin-right: auto; }
+.contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+.contact-links a {
+  padding: 12px 20px;
+  background: var(--navy);
+  color: white;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: bold;
+}
+footer {
+  background: #0b1b2d;
+  color: #aebed0;
+  text-align: center;
+  padding: 22px;
+  font-size: 12px;
+}
+@media(max-width: 750px) {
+  nav { align-items: flex-start; gap: 15px; flex-direction: column; }
+  .nav-links { gap: 12px; }
+  .hero { padding: 75px 7%; }
+  section { padding: 55px 7%; }
+  .about-grid, .two-column, .skills-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Abdelali Oubihi</h1>
-        <p>Supply Chain Coordinator | Supply Chain & Data Analytics</p>
-    </header>
+<nav>
+  <div class="logo">AO.</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#process">Supply Chain</a>
+    <a href="#data">Data Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <section>
-        <h2>About Me</h2>
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Supply Chain · Analytics · Performance</div>
+    <h1>Abdelali <span>Oubihi</span></h1>
+    <h2>Supply Chain Coordinator</h2>
+    <p>
+      Connecting supply chain operations with data analytics
+      to improve performance, optimize processes and support
+      smarter business decisions.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#contact">Let's Connect</a>
+      <a class="btn btn-outline" href="#expertise">Explore My Expertise</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-label">Introduction</div>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div>
         <p>
-            I am a Supply Chain Coordinator with a Master's degree
-            in Supply Chain Management.
+          I am a Supply Chain Coordinator holding a Master's degree
+          in Supply Chain Management.
         </p>
+        <br>
         <p>
-            I am interested in using data analytics and digital tools
-            to improve supply chain performance and support better decisions.
+          My professional interests lie at the intersection of supply
+          chain operations, procurement, process improvement and data
+          analytics. I am particularly interested in transforming
+          operational information into meaningful insights.
         </p>
-    </section>
+      </div>
+      <div class="card">
+        <h3>My Professional Focus</h3>
+        <p>
+          Building a strong combination of operational understanding
+          and analytical skills to contribute to more efficient,
+          measurable and data-driven supply chain processes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section>
-        <h2>Technical Skills</h2>
-        <p>Excel | Power Query | Power BI | SQL | Python</p>
-    </section>
+<section id="expertise">
+  <div class="container">
+    <div class="section-label">What I Work With</div>
+    <h2 class="section-title">Supply Chain Expertise</h2>
+    <p class="section-intro">
+      Key areas of supply chain management that shape my professional
+      knowledge and interests.
+    </p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Procurement & Sourcing</h3>
+        <p>Purchasing processes, supplier sourcing, negotiation and procurement analysis.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Supplier Management</h3>
+        <p>Supplier evaluation, performance monitoring, delivery reliability and KPIs.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Inventory Management</h3>
+        <p>Stock monitoring, replenishment, inventory control and optimization.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Planning & Replenishment</h3>
+        <p>Supply planning, order follow-up, demand coordination and availability.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Logistics & Distribution</h3>
+        <p>Warehouse operations, transportation, delivery coordination and distribution.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Continuous Improvement</h3>
+        <p>Lean principles, DMAIC, 5S, root cause analysis and process improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section>
-        <h2>Projects</h2>
-        <p>My professional and data analytics projects will be presented here.</p>
-        <p>Coming soon...</p>
-    </section>
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-label">End-to-End Perspective</div>
+    <h2 class="section-title">The Supply Chain Process</h2>
+    <p class="section-intro">
+      Understanding how activities connect to deliver the right product,
+      at the right time, in the right place.
+    </p>
+    <div class="flow">
+      <div class="flow-item"><strong>01 · PLAN</strong><span>Demand & Supply Planning</span></div>
+      <div class="flow-item"><strong>02 · SOURCE</strong><span>Purchasing & Suppliers</span></div>
+      <div class="flow-item"><strong>03 · PRODUCE</strong><span>Production & Operations</span></div>
+      <div class="flow-item"><strong>04 · STORE</strong><span>Warehouse & Inventory</span></div>
+      <div class="flow-item"><strong>05 · DELIVER</strong><span>Transport & Distribution</span></div>
+      <div class="flow-item"><strong>06 · MEASURE</strong><span>KPIs & Performance</span></div>
+      <div class="flow-item"><strong>07 · IMPROVE</strong><span>Analysis & Optimization</span></div>
+      <div class="flow-item"><strong>08 · CONNECT</strong><span>Customer Satisfaction</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="container">
+    <div class="section-label">Technology & Analytics</div>
+    <h2 class="section-title">Data & Digital Skills</h2>
+    <p class="section-intro">
+      Developing analytical capabilities to turn supply chain data
+      into actionable business insights.
+    </p>
+    <div class="card">
+      <h3>Tools & Technologies</h3>
+      <div class="tools">
+        <span class="tool">Microsoft Excel</span>
+        <span class="tool">Power Query</span>
+        <span class="tool">Power BI</span>
+        <span class="tool">DAX</span>
+        <span class="tool">SQL</span>
+        <span class="tool">Python</span>
+      </div>
+      <p style="margin-top:20px;">
+        My goal is to strengthen these skills through practical projects
+        focused on procurement, inventory and supply chain performance.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-label">My Journey</div>
+    <h2 class="section-title">Experience & Education</h2>
+    <div class="two-column">
+      <div class="card">
+        <h3>Professional Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Supply Chain Coordinator</h3>
+            <p>Professional experience · 2026 – Present</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Supply Chain & Procurement Internship</h3>
+            <p>Supplier performance, replenishment and operational analysis.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Logistics & Distribution Experience</h3>
+            <p>Logistics operations, production flows and distribution activities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Education</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Master's Degree in Supply Chain Management</h3>
+            <p>Université Mundiapolis · Casablanca</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Bachelor's Degree in Economics & Management</h3>
+            <p>FSJES Ain Chock · Casablanca</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Practical Work</div>
+    <h2 class="section-title">Selected Projects</h2>
+    <div class="project-note">
+      <strong>Projects coming soon.</strong>
+      <p>
+        Practical case studies in supplier performance, inventory
+        analytics, procurement analysis and supply chain dashboards
+        will be presented here as they are completed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-intro">
+      Interested in supply chain, analytics or professional opportunities?
+      Feel free to get in touch.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:abdelalioubihi0@gmail.com">Email Me</a>
+      <a href="https://www.linkedin.com/in/abdelali-oubihi/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Abdelali Oubihi · Professional Portfolio
+</footer>
 
 </body>
 </html>
