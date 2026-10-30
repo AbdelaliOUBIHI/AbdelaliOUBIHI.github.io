@@ -53,19 +53,9 @@ nav {
 
 .nav-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.logo span {
-  color: var(--cyan);
 }
 
 .nav-links {
@@ -400,7 +390,7 @@ footer {
   }
 
   .nav-content {
-    flex-direction: column;
+    justify-content: center;
   }
 
   .nav-links {
@@ -434,7 +424,6 @@ footer {
 
 <nav>
   <div class="container nav-content">
-    <a href="#home" class="logo">ABDELALI<span>.</span></a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#expertise">Expertise</a>
